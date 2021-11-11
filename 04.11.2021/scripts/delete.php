@@ -6,12 +6,11 @@ if(!empty($_GET['id'])){
   $connect->query($sql);
   if($connect->affected_rows){
     header("location: ./bazy_delete.php?error=0&info=Usunięto rekord o id=$id!");
+    echo $connect->affected_rows;
   }else{
     header("location: ./bazy_delete.php?error=1&info=NIe usunięto rekord!");
   }
 }else {
   header('location: ./bazy_delete.php');
 }
-
-
- ?>
+?>
